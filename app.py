@@ -26,9 +26,9 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    data = request.get_json()
-    prompt = data.get('prompt')
-    if not prompt:
+    data = request.get_json(silent=True)
+    prompt = data.get('prompt') if isinstance(data, dict) else None
+    if not isinstance(prompt, str) or not prompt.strip():
         return jsonify({'error': 'No prompt provided'}), 400
 
     try:

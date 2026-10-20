@@ -2,5 +2,5 @@ torch
 diffusers
 transformers
 Pillow
-Flask==2.0.3
-Werkzeug==2.0.3
+Flask>=3.1,<4
+Werkzeug>=3.1,<4

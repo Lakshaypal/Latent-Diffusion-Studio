@@ -6,12 +6,12 @@ A Flask-based web application that generates images from text descriptions using
 
 - 🖼️ Text-to-image generation using Stable Diffusion v1.5
 - 🎯 Simple and intuitive web interface
-- ⚡ Real-time image generation
+- ⚡ Local model inference (generation time depends on hardware)
 - 🚀 Support for both CPU and GPU (CUDA) processing
 
 ## 📋 Prerequisites
 
-- 🐍 Python 3.7 or higher
+- 🐍 Python 3.10 or 3.11 with compatible PyTorch dependencies
 - 💻 CUDA-capable GPU (optional, but recommended for faster generation)
 - 📦 pip (Python package installer)
 
@@ -19,8 +19,8 @@ A Flask-based web application that generates images from text descriptions using
 
 1. Clone this repository:
 ```bash
-git clone <repository-url>
-cd text-to-image-app
+git clone https://github.com/Lakshaypal/Text-to-image-generations.git
+cd Text-to-image-generations
 ```
 
 2. Create and activate a virtual environment:
@@ -50,10 +50,10 @@ http://localhost:5001
 
 ## 🔧 Technical Details
 
-- ⚙️ Built with Flask 2.0.3
+- ⚙️ Built with Flask 3.1+
 - 🤖 Uses Stable Diffusion v1.5 from Hugging Face
 - 💪 Supports both CPU and GPU processing
-- 🖼️ Images are generated in real-time and returned as base64-encoded PNG files
+- 🖼️ Images are generated synchronously and returned as base64-encoded PNG files
 
 ## 📦 Dependencies
 
@@ -61,14 +61,17 @@ http://localhost:5001
 - 🎯 diffusers
 - 🔄 transformers
 - 🖼️ Pillow
-- 🌐 Flask==2.0.3
-- ⚙️ Werkzeug==2.0.3
+- 🌐 Flask>=3.1,<4
+- ⚙️ Werkzeug>=3.1,<4
 
 ## 📝 Notes
 
 - ⏳ The first run will download the Stable Diffusion model, which may take some time depending on your internet connection.
 - 🚀 GPU acceleration is automatically enabled if a CUDA-capable GPU is available.
 - 🔌 The application runs on port 5001 by default.
+- The configured model is `runwayml/stable-diffusion-v1-5`. First startup needs access to its files and enough memory; CPU generation can be slow.
+- This is a development demo: `python app.py` enables Flask debug mode. For a local-only preview without the reloader, use `flask --app app run --host 127.0.0.1 --port 5001`. Do not expose the debug server publicly.
+- Model access and use remain subject to the model provider's terms, separately from this repository's code licence.
 
 ## 📄 License
 
