@@ -1,4 +1,4 @@
-# 🎨 Text-to-Image Generation App
+# Latent Diffusion Studio — Stable Diffusion Demo
 
 A Flask-based web application that generates images from text descriptions using the Stable Diffusion model. This application provides a simple interface where users can input text prompts and receive AI-generated images in response.
 
@@ -19,8 +19,8 @@ A Flask-based web application that generates images from text descriptions using
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/Lakshaypal/Text-to-image-generations.git
-cd Text-to-image-generations
+git clone https://github.com/Lakshaypal/Latent-Diffusion-Studio.git
+cd Latent-Diffusion-Studio
 ```
 
 2. Create and activate a virtual environment:
